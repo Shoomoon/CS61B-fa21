@@ -23,7 +23,7 @@ public class CheckLabConfig {
 	public static void checkVariableNotNull(String value, String name) {
 		if (value == null) {
 			System.out.println("ERROR! Environment variable " + name + " is not set.");
-			System.out.println("If you've already set it using the lab 1 setup directions, " +
+			System.out.println("If you've already set it using the lab 2 setup directions, " +
 				               "then try restarting your terminal or IntelliJ.");
 			System.exit(1);
 		}
@@ -46,11 +46,11 @@ public class CheckLabConfig {
 		String expected;
 
 		if (!snapsCheck) {
-			pattern = "sp21-s[\\d]+";
-			expected = "sp21-s1234";
+			pattern = "fa20-s[\\d]+";
+			expected = "fa20-s1234";
 		} else {
-			pattern = "snaps-sp21-s[\\d]+";
-			expected = "snaps-sp21-s1234";
+			pattern = "snaps-fa20-s[\\d]+";
+			expected = "snaps-fa20-s1234";
 		}
 
 		if (!folderName.matches(pattern)) {
@@ -72,27 +72,27 @@ public class CheckLabConfig {
 
 	public static void main(String[] args) {
 		System.out.println("Testing configuration. This program only works for the " +
-			               "Spring 2021 edition of this course.");
+			               "Fall 2020 edition of this course.");
 
 		String yourOS = System.getProperty("os.name").toLowerCase();
 		String yourOSVersion = System.getProperty("os.version");
 
-//		if (yourOS.contains("windows")) {
-//			checkConfig(true);
-//		} else {
-//			checkConfig(false);
-//		}
+		if (yourOS.contains("windows")) {
+			checkConfig(true);
+		} else {
+			checkConfig(false);
+		}
 
-		if (yourOS.contains("mac")) {
+		/*if (yourOS.contains("mac")) {
 			if (yourOSVersion.contains("10.15")) {
 				checkConfig(false);
 			} else {
 				checkConfig(false);
 			}
 		} // for future reference in case we need to test configurations separately
-		     //for Mac OS, Catalina, Linux, etc
+		     for Mac OS, Catalina, Linux, etc*/
 
-		System.out.println("Your system appears to be configured correctly. You've completed lab 1 setup.");
+		System.out.println("Your system appears to be configured correctly. You've completed lab 2 setup.");
 	}
 }
 

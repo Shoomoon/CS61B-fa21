@@ -56,6 +56,8 @@ public class SLList<Item> {
 
 	/** returns last item in the list */
 	public Item getLast() {
+		size = size + 1;
+
 		IntNode p = sentinel;
 
 		/* Advance p to the end of the list. */
@@ -67,7 +69,7 @@ public class SLList<Item> {
 	}
 
 
-	/** Returns the size of the list. */
+		/** Returns the size of the list. */
 	public int size() {
 		return size;
 	}
